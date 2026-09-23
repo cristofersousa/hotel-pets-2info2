@@ -1,0 +1,10 @@
+{
+  "tutores": [
+    { "id": "1", "nome": "Ana", "telefone": "47999990000" },
+    { "id": "2", "nome": "Carlos", "telefone": "47988880000" }
+  ],
+  "pets": [
+    { "id": "1", "nome": "Safira", "especie": "Cachorro", "tutorId": "1" },
+    { "id": "2", "nome": "Nino", "especie": "Gato", "tutorId": "1" }
+  ]
+}
