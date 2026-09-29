@@ -17,11 +17,6 @@ const router = createRouter({
       name: 'novo-pet',
       component: () => import('../views/AddPetView.vue'),
     },
-    {
-      path: '/pets/:id',
-      name: 'detalhes-pet',
-      component: () => import('../views/PetDetailsView.vue'),
-    },
   ],
 });
 

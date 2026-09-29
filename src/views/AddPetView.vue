@@ -7,11 +7,11 @@
       <p class="text-body-secondary mb-0">Cadastro de Pets no sistema.</p>
     </header>
 
-    <RouterLink
+    <!-- <RouterLink
       class="btn btn-primary"
       :to="{ name: 'addPet' }"
     >
       Adicionar Pet
-    </RouterLink>
+    </RouterLink> -->
   </div>
 </template>
