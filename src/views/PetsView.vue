@@ -43,8 +43,8 @@ onMounted(carregarDados);
     </header>
 
     <RouterLink
-      class="btn btn-primary btn-outline"
-      to="/pets/novo"
+      class="btn btn-outline-primary"
+      to="pets/novo"
     >
       Novo pet
     </RouterLink>
