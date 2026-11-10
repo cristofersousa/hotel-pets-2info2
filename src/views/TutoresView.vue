@@ -4,7 +4,9 @@ import { RouterLink } from 'vue-router';
 
 const tutores = ref([]);
 const pets = ref([]);
-const API_URL = 'http://localhost:3000';
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 
 async function carregarPets() {
   const resposta = await fetch(`${API_URL}/pets`);

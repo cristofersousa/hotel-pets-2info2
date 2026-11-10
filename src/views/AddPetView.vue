@@ -4,8 +4,9 @@ import { RouterLink, useRouter } from 'vue-router';
 
 const router = useRouter(); // chamando meu router
 // chamando a minha API
-const API_URL = 'http://localhost:3000';
-
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 // lista vazia dos meus tutores
 const tutores = ref([]);
 

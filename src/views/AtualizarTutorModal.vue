@@ -65,9 +65,13 @@ async function salvarTutor() {
   salvando.value = true;
   erro.value = '';
 
+  const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
+
   try {
     const resposta = await fetch(
-      `http://localhost:3000/tutores/${props.tutor.id}`,
+      `${API_URL}/tutores/${props.tutor.id}`,
       {
         method: 'PATCH',
         headers: {

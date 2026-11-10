@@ -6,7 +6,9 @@ const pets = ref([]); // lista de pets vazia
 const tutores = ref([]); // lista de tutores vazia;
 
 // chamando a minha API geral:
-const API_URL = 'http://localhost:3000';
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 
 // chamar a minha API para listar todos os pets e tutores;
 async function carregarDados() {
@@ -41,37 +43,6 @@ async function excluirPet(id) {
     await carregarDados();
   }
 }
-
-const petEmEdicao = ref(null);
-
-function abrirEdicao(pet) {
-  petEmEdicao.value = { ...pet };
-}
-
-function fecharEdicao() {
-  petEmEdicao.value = null;
-}
-
-async function atualizarPet() {
-  const { id, nome, especie } = petEmEdicao.value;
-
-  const resposta = await fetch(`http://localhost:3000/pets/${id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ nome, especie }),
-  });
-
-  if (!resposta.ok) {
-    window.alert('Não foi possível atualizar o pet.');
-    return;
-  }
-
-  await carregarDados();
-  fecharEdicao();
-}
-
 onMounted(carregarDados);
 </script>
 

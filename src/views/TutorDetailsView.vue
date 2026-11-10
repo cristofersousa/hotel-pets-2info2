@@ -12,10 +12,13 @@ const novoPet = ref({
 });
 
 const pets = ref([]);
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 
 async function carregarTutor() {
   const { id } = route.params;
-  const respostaTutor = await fetch(`http://localhost:3000/tutores/${id}`);
+  const respostaTutor = await fetch(`${API_URL}/tutores/${id}`);
   tutor.value = await respostaTutor.json();
   console.table(tutor.value);
 }
@@ -28,7 +31,7 @@ async function salvarPet() {
 
   novoPet.value.tutorId = tutor.value.id;
 
-  const resposta = await fetch('http://localhost:3000/pets', {
+  const resposta = await fetch(`${API_URL}/pets`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -50,7 +53,7 @@ async function salvarPet() {
 }
 
 async function carregarPets() {
-  const resposta = await fetch('http://localhost:3000/pets');
+  const resposta = await fetch(`${API_URL}/pets`);
 
   if (!resposta.ok) {
     window.alert('Não foi possível carregar os pets.');

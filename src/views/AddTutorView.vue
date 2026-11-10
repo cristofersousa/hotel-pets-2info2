@@ -3,8 +3,9 @@ import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 
 const router = useRouter(); // chamando meu router
-const API_URL = 'http://localhost:3000'; // chamando a minha API
-
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 const novoTutor = ref({
   nome: '',
   cpf_cnpj: '',

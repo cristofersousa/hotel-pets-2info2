@@ -3,7 +3,9 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const API_URL = 'http://localhost:3000';
+const API_URL = import.meta.env.DEV
+  ? 'http://localhost:3000'
+  : 'https://hotel-pets-2info2.onrender.com';
 const pet = ref(null);
 const tutor = ref(null);
 
