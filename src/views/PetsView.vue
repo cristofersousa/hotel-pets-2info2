@@ -42,6 +42,36 @@ async function excluirPet(id) {
   }
 }
 
+const petEmEdicao = ref(null);
+
+function abrirEdicao(pet) {
+  petEmEdicao.value = { ...pet };
+}
+
+function fecharEdicao() {
+  petEmEdicao.value = null;
+}
+
+async function atualizarPet() {
+  const { id, nome, especie } = petEmEdicao.value;
+
+  const resposta = await fetch(`http://localhost:3000/pets/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ nome, especie }),
+  });
+
+  if (!resposta.ok) {
+    window.alert('Não foi possível atualizar o pet.');
+    return;
+  }
+
+  await carregarDados();
+  fecharEdicao();
+}
+
 onMounted(carregarDados);
 </script>
 
@@ -80,13 +110,28 @@ onMounted(carregarDados);
           <td>{{ pet.nome }}</td>
           <td>{{ pet.especie }}</td>
           <td>{{ nomeDoTutor(pet.tutorId) }}</td>
-          <td>
-            <RouterLink :to="`/pets/${pet.id}`"> Visualizar </RouterLink>
+          <td class="text-center text-nowrap">
+            <RouterLink
+              class="btn btn-outline-success btn-sm me-2"
+              :to="`/pets/${pet.id}`"
+            >
+              <i
+                class="bi bi-eye me-1"
+                aria-hidden="true"
+              ></i>
+              Visualizar
+            </RouterLink>
+
             <button
-              class="btn btn-danger"
+              class="btn btn-outline-danger btn-sm"
+              type="button"
               @click="excluirPet(pet.id)"
             >
-              Excluir
+              <i
+                class="bi bi-trash-fill me-1"
+                aria-hidden="true"
+              ></i>
+              Deletar
             </button>
           </td>
         </tr>

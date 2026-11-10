@@ -2,13 +2,62 @@
   "tutores": [
     {
       "id": "1",
-      "nome": "Ana",
-      "telefone": "47999990000"
+      "nome": "Ana Gusmão Xavier",
+      "telefone": "47999990000",
+      "endereco": {
+        "cep": "89212700",
+        "rua": "Rua Francisco Bernardo Boticher",
+        "numero": "901",
+        "bairro": "Santa Catarina",
+        "cidade": "Joinville",
+        "estado": "SC"
+      },
+      "email": "ana@gmail.com",
+      "cpf_cnpj": "33558095835"
     },
     {
       "id": "2",
       "nome": "Carlos",
       "telefone": "47988880000"
+    },
+    {
+      "nome": "André Santos",
+      "telefone": "47990122212",
+      "id": "Dfu4RCVrSJI"
+    },
+    {
+      "nome": "André Santos",
+      "cpf_cnpj": "335920223",
+      "telefone": "47901100311",
+      "email": "",
+      "dataNascimento": "14/10/1990",
+      "observacoes": "teste de algoooo",
+      "endereco": {
+        "rua": "Rua Santa Catarina",
+        "numero": "90",
+        "bairro": "Floresta",
+        "cidade": "Joinville",
+        "estado": "SC",
+        "cep": "89212000"
+      },
+      "id": "LXiLnmtPo9w"
+    },
+    {
+      "nome": "João Doe",
+      "cpf_cnpj": "339.320.493-12",
+      "telefone": "(47)898829-13",
+      "email": "",
+      "dataNascimento": "14/04/1999",
+      "observacoes": "esse usuario tem interesse em hospedar no final do ano....\n",
+      "endereco": {
+        "rua": "Rua São Paulo",
+        "numero": "90",
+        "bairro": "Itaum",
+        "cidade": "Joinville",
+        "estado": "SC",
+        "cep": "89210000"
+      },
+      "id": "erQhm2f6JpE"
     }
   ],
   "pets": [
@@ -25,10 +74,64 @@
       "tutorId": "1"
     },
     {
-      "nome": "Carlos",
+      "nome": "Gaya",
+      "especie": "Gato",
+      "tutorId": "1",
+      "id": "vtl3ToXfznM"
+    },
+    {
+      "nome": "Zelda",
+      "especie": "Gato",
+      "tutorId": "1",
+      "id": "nZtHrjEI_0E"
+    },
+    {
+      "nome": "Jaspion",
+      "especie": "Cachorro",
+      "tutorId": "1",
+      "id": "HbPf8ltLyYE"
+    },
+    {
+      "nome": "Clara",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "8j2Dt2V6244"
+    },
+    {
+      "nome": "Rock",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "34lXJtM89X8"
+    },
+    {
+      "nome": "Alvo",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "tPR78upk7Lo"
+    },
+    {
+      "nome": "Moneu",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "MBVfWsFOaiE"
+    },
+    {
+      "nome": "Seven",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "YVNG7eErbVk"
+    },
+    {
+      "nome": "Misty",
+      "especie": "Gato",
+      "tutorId": "erQhm2f6JpE",
+      "id": "zJw8IlBxFHs"
+    },
+    {
+      "nome": "Willow",
       "especie": "Coelho",
-      "tutorId": "Carlos",
-      "id": "rUGvdZ_A93U"
+      "tutorId": "erQhm2f6JpE",
+      "id": "6kCtHIIqHUU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
